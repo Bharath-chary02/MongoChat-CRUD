@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Message</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card form-card">
+            <h2>Edit Message</h2>
+            <p class="subtitle">From <b><%= chat.from %></b> to <b><%= chat.to %></b></p>
+
+            <hr class="hr">
+
+            <form action="/chats/<%= chat.id %>?_method=PATCH" method="post">
+                <label for="Msg">Update Message</label>
+                <textarea id="Msg" name="msg" rows="5"><%= chat.msg %></textarea>
+                <br><br>
+
+                <button class="btn btn-primary">Save Changes</button>
+                <a href="/chats" class="btn btn-outline" style="text-decoration:none; display:inline-block; margin-left:8px;">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

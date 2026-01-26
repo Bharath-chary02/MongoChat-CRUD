@@ -76,5 +76,11 @@ app.delete("/chats/:id", async (req, res) => {
     res.redirect("/chats");
 });
 
+// home
+app.get("/", (req, res) => {
+  res.redirect("/chats");
+});
+
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log("Listening on port", PORT));
